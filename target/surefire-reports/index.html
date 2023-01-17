@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-WebDriverTests" class="navigator-link ">
-                    <span>C:\WebDriverTask\testng.xml</span>
+                    <span>D:\Project\WebDriver\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -102,7 +102,7 @@
                     <div class="method-list-content passed suite-WebDriverTests">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-WebDriverTests" title="WebDriverSeleniumHQ" class="method navigator-link" hash-for-method="commonVerifingPages">commonVerifingPages</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-WebDriverTests" title="pageobject_model.test.HelloWebDriver" class="method navigator-link" hash-for-method="HomePageTest">HomePageTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-WebDriverTests -->
@@ -120,14 +120,14 @@
           <div class="suite-WebDriverTests-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">WebDriverSeleniumHQ</span>
+              <span class="class-name">pageobject_model.test.HelloWebDriver</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="commonVerifingPages">
-                  </a> <!-- commonVerifingPages -->
-                  <span class="method-name">commonVerifingPages</span>
+                  <a name="HomePageTest">
+                  </a> <!-- HomePageTest -->
+                  <span class="method-name">HomePageTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -135,7 +135,7 @@
         </div> <!-- panel WebDriverTests -->
         <div panel-name="test-xml-WebDriverTests" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\WebDriverTask\testng.xml</span>
+            <span class="header-content">D:\Project\WebDriver\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -144,7 +144,7 @@
 &lt;suite name=&quot;WebDriverTests&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Smoke Test&quot; verbose=&quot;0&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;WebDriverSeleniumHQ&quot;/&gt;
+      &lt;class name=&quot;pageobject_model.test.HelloWebDriver&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Smoke Test --&gt;
 &lt;/suite&gt; &lt;!-- WebDriverTests --&gt;
@@ -186,14 +186,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'commonVerifingPages')
-data.setCell(0, 2, 'WebDriverSeleniumHQ')
-data.setCell(0, 3, 13658);
+data.setCell(0, 1, 'HomePageTest')
+data.setCell(0, 2, 'pageobject_model.test.HelloWebDriver')
+data.setCell(0, 3, 2048);
 window.suiteTableData['WebDriverTests']= { tableData: data, tableDiv: 'times-div-WebDriverTests'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 13 seconds</span>
+              <span class="suite-total-time">Total running time: 2 seconds</span>
               <div id="times-div-WebDriverTests">
               </div> <!-- times-div-WebDriverTests -->
             </div> <!-- times-div -->
@@ -219,11 +219,19 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">WebDriverSeleniumHQ</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <span class="method-name">commonVerifingPages</span>
+              <div class="chronological-class-name">pageobject_model.test.HelloWebDriver</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">browserSetup</span>
                 <span class="method-start">0 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">HomePageTest</span>
+                <span class="method-start">975 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">closeDriver</span>
+                <span class="method-start">3024 ms</span>
+              </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

@@ -18,18 +18,18 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class HelloWebDriver {
-//    @BeforeMethod(alwaysRun = true)
-//    public void browserSetup() {
-//       WebDriver driver = new ChromeDriver();
-//
-//    }
+    WebDriver driver = new ChromeDriver();
+
+    @BeforeMethod(alwaysRun = true)
+    public void browserSetup() {
+        driver.get("https://www.onliner.by/");
+    }
 
     @Test
     public void HomePageTest() {
-        WebDriver driver = new ChromeDriver();
+
 
         HomePage homePage = new HomePage(driver);
-        homePage.openPage();
         homePage.openCatalogPage();
 
         CatalogPage catalogPage = new CatalogPage(driver);
@@ -37,13 +37,18 @@ public class HelloWebDriver {
         catalogPage.openTvPage();
 
 
-        //  Assert.assertEquals(expectedSearchResultsNumber >0, "Search results are empty!")
+    }
 
 
+    //  Assert.assertEquals(expectedSearchResultsNumber >0, "Search results are empty!")
+    @AfterMethod
+    public void closeDriver() {
         driver.quit();
         driver = null;
     }
-
 }
+
+
+
 
 

@@ -1,2 +1,5 @@
-HelloWebDriver.class
-WebDriverSeleniumHQ.class
+pageobject_model\test\HelloWebDriver.class
+pageobject_model\page\AbstractPage.class
+pageobject_model\page\CatalogPage.class
+pageobject_model\page\HomePage.class
+pageobject_model\page\TvPage.class

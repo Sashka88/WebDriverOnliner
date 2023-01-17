@@ -3,7 +3,7 @@
 <suite name="WebDriverTests">
     <test name="Smoke Test">
         <classes>
-            <class name="WebDriverSeleniumHQ"/>
+            <class name="pageobject_model.test.HelloWebDriver"/>
         </classes>
     </test>
     <!--  Test  -->
