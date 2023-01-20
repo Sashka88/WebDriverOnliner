@@ -11,6 +11,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pageobject_model.page.CatalogPage;
 import pageobject_model.page.HomePage;
+import pageobject_model.page.TvPage;
 
 
 import java.time.Duration;
@@ -22,30 +23,34 @@ public class HelloWebDriver {
 
     @BeforeMethod(alwaysRun = true)
     public void browserSetup() {
+
+        driver.manage().window().maximize();
         driver.get("https://www.onliner.by/");
     }
 
     @Test
     public void HomePageTest() {
 
-
         HomePage homePage = new HomePage(driver);
         homePage.openCatalogPage();
 
         CatalogPage catalogPage = new CatalogPage(driver);
         catalogPage.openElectronicMenu();
+        catalogPage.openTvMenu();
         catalogPage.openTvPage();
 
+        TvPage TvPage = new TvPage(driver);
+        TvPage.selectTvMaker();
 
     }
 
 
-    //  Assert.assertEquals(expectedSearchResultsNumber >0, "Search results are empty!")
-    @AfterMethod
-    public void closeDriver() {
-        driver.quit();
-        driver = null;
-    }
+//    //  Assert.assertEquals(expectedSearchResultsNumber >0, "Search results are empty!")
+//    @AfterMethod (alwaysRun = true)
+//    public void stopBrowser() {
+//        driver.quit();
+//        driver = null;
+//    }
 }
 
 

@@ -16,6 +16,9 @@ public class CatalogPage extends AbstractPage{
     @FindBy(xpath = "//div[@class='catalog-navigation-list__aside-title'][contains(text(), 'Телевидение')]")
     private WebElement searchTvBtn;
 
+    @FindBy(xpath = "//div/div[2]/div[2]/div/a[1]//span[contains(text(), 'Телевизоры')]")
+    private WebElement searchTvMenuBtn;
+
     public CatalogPage(WebDriver driver){
         super(driver);
     }
@@ -27,12 +30,18 @@ public class CatalogPage extends AbstractPage{
         searchElectroBtn.click();
         return this;
     }
-    public CatalogPage openTvPage() {
+    public CatalogPage openTvMenu() {
         new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
                 .until(condition -> searchTvBtn.isDisplayed());
         searchTvBtn.click();
         return this;
     }
 
+    public CatalogPage openTvPage() {
+        new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
+                .until(condition -> searchTvMenuBtn.isDisplayed());
+        searchTvMenuBtn.click();
+        return this;
+    }
 
 }
