@@ -1,14 +1,18 @@
 package pageobject_model.page;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class TvPage extends AbstractPage {
+import java.util.List;
 
-    @FindBy(xpath = "//li[2]//input[@value='samsung' and (@type='checkbox')]")
-    private WebElement SearchSamsungChbx;
+public class TvPage extends AbstractPage {
+    JavascriptExecutor js = (JavascriptExecutor)driver;
+
+    @FindBy(xpath = "//input[@value='samsung' and (@type='checkbox')]")
+    private List<WebElement> SearchSamsungChbx;
 
     //@FindBy(xpath = "//li[2]//input[@value='samsung']")
     //private WebElement SearchPriceInput;
@@ -19,8 +23,9 @@ public class TvPage extends AbstractPage {
 
     public TvPage selectTvMaker()  {
         new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
-                .until(condition -> SearchSamsungChbx.isDisplayed());
-        SearchSamsungChbx.click();
+                .until(condition -> SearchSamsungChbx.get(0).isDisplayed());
+        //SearchSamsungChbx.get(0).click();
+        js.executeScript("arguments[0].click();", SearchSamsungChbx);
         return this;
     }
 

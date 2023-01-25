@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 
 public class CatalogPage extends AbstractPage{
@@ -16,8 +17,9 @@ public class CatalogPage extends AbstractPage{
     @FindBy(xpath = "//div[@class='catalog-navigation-list__aside-title'][contains(text(), 'Телевидение')]")
     private WebElement searchTvBtn;
 
-    @FindBy(xpath = "//div/div[2]/div[2]/div/a[1]//span[contains(text(), 'Телевизоры')]")
-    private WebElement searchTvMenuBtn;
+    @FindBy(xpath = "//span[@class='catalog-navigation-list__dropdown-title'][contains(text(), 'Телевизоры')]")
+    private List<WebElement> searchTvMenuBtn;
+
 
     public CatalogPage(WebDriver driver){
         super(driver);
@@ -39,8 +41,8 @@ public class CatalogPage extends AbstractPage{
 
     public CatalogPage openTvPage() {
         new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
-                .until(condition -> searchTvMenuBtn.isDisplayed());
-        searchTvMenuBtn.click();
+                .until(condition -> searchTvMenuBtn.get(1).isDisplayed());
+        searchTvMenuBtn.get(1).click();
         return this;
     }
 
