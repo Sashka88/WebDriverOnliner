@@ -16,13 +16,12 @@ public class CatalogPage extends AbstractPage{
 
     private static By searchElectroBtn = By.xpath("//span[contains(text(),'Электроника')]");
     private static By searchTvBtn = By.xpath("//div[@class='catalog-navigation-list__aside-title'][contains(text(), 'Телевидение')]");
-    private static By searchTvMenuBtn = By.xpath("//span[@class='catalog-navigation-list__dropdown-title'][contains(text(), 'Телевизоры')]");
-    private static By currentTitle = By.xpath("//div[@class = 'catalog-navigation__title']" );
+    private static By searchTvMenuBtn = By.xpath("//div[@class='catalog-navigation-list__aside-item catalog-navigation-list__aside-item_active']//span[@class='catalog-navigation-list__dropdown-title'][contains(text(),'Телевизоры')]");
+//    private static By currentTitle = By.xpath("//div[@class = 'catalog-navigation__title']" );
 
     public CatalogPage(WebDriver driver){
         super(driver);
     }
-
 
     public CatalogPage openElectronicMenu() {
         waitUntilIsDisplayed(searchElectroBtn);
@@ -37,12 +36,9 @@ public class CatalogPage extends AbstractPage{
     }
 
     public CatalogPage openTvPage() {
-        findTvElements(searchTvMenuBtn);
-        new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
-                .until(condition -> findTvElements(searchTvMenuBtn).get(1).isDisplayed());
-        findTvElements(searchTvMenuBtn).get(1).click();
+        waitUntilIsDisplayed(searchTvMenuBtn);
+        findAndClick(searchTvMenuBtn);
         return this;
-//
     }
 
 

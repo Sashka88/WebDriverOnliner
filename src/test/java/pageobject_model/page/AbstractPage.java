@@ -1,6 +1,7 @@
 package pageobject_model.page;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -69,9 +70,9 @@ public abstract class AbstractPage {
         findTvElement(xpath).sendKeys(value);
     }
 
-    protected void assertPage(By currentTitle, String expectedTitle) {
-        Assert.assertTrue((findTvElements(currentTitle).contains(expectedTitle)), "page is incorrect");
-    }
+//    protected void assertPage(By currentTitle, String expectedTitle) {
+//        Assert.assertTrue((findTvElements(currentTitle).contains(expectedTitle)), "page is incorrect");
+//    }
 //    protected void assertPage(String title) {
 //        String expectedTitle = "Каталог";
 //        Assert.assertTrue(findTvElements(title).contains(expectedTitle), "page is incorrect");

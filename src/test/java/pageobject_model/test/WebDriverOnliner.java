@@ -17,38 +17,10 @@ import java.util.Properties;
 
 public class WebDriverOnliner {
     WebDriver driver = new ChromeDriver();
-//    private static By currentTitle = By.xpath("//div[@class = 'catalog-navigation__title']" );
-//    public static String tv;
-//    public static String price;
-//    public static String diagonalfrom;
-//    public static String diagonalto;
-//    public static String resolution;
-//    public static String titleCatalogPage;
-//    public static String titleTvPage;
+
     @BeforeMethod(alwaysRun = true)
     public void browserSetup() {
-        Browser.openOnliner();
     }
-//        FileInputStream fis;
-//        try {
-//            Properties property = new Properties();
-//            fis = new FileInputStream("src/test/resources/tvFilterTestData.properties");
-//            property.load(fis);
-//
-//            tv = property.getProperty("testdata.tvMaker");
-//            price = property.getProperty("testdata.price");
-//            diagonalfrom = property.getProperty("testdata.diagonalfrom");
-//            diagonalto = property.getProperty("testdata.diagonalto");
-//            resolution = property.getProperty("testdata.resolution");
-//            titleCatalogPage = property.getProperty("testdata.catalogtitle");
-//            titleTvPage = property.getProperty("testdata.tvtitle");
-//            System.out.println(tv);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-
-//        driver.manage().window().maximize();
-//        driver.get("https://www.onliner.by/");
 //        String expectedTitle = "Каталог";
 //        Assert.assertTrue((findTvElements(currentTitle).contains(expectedTitle), "page is incorrect"));
 
