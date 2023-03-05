@@ -25,7 +25,7 @@ public class WebDriverOnliner {
 //        Assert.assertTrue((findTvElements(currentTitle).contains(expectedTitle), "page is incorrect"));
 
     @Test
-    public void HomePageTest() throws InterruptedException {
+    public void homePageTest() throws InterruptedException {
 
         Browser browser = new Browser(driver);
         browser.openOnliner();
@@ -38,15 +38,15 @@ public class WebDriverOnliner {
         catalogPage.openTvMenu();
         catalogPage.openTvPage();
 
-        TvPage TvPage = new TvPage(driver);
-        TvPage.selectTvMaker();
-        TvPage.writePrice();
-        TvPage.selectResolution();
-        TvPage.selectDiagonal();
-        TvPage.vailidateTvMaker();
-        TvPage.vailidatePrice();
-        TvPage.vailidateDiagonal();
-        TvPage.vailidateResolution();
+        TvPage tvPage = new TvPage(driver);
+        tvPage.selectTvMaker();
+        tvPage.writePrice();
+        tvPage.selectResolution();
+        tvPage.selectDiagonal();
+        tvPage.vailidateTvMaker();
+        tvPage.vailidatePrice();
+        tvPage.vailidateDiagonal();
+        tvPage.vailidateResolution();
 //        softAssert.assertAll();
     }
 
