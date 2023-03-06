@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bec35021-36be-4166-88fa-48dba9a8a4a1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/onliner/page/AbstractPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/onliner/page/TvPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/onliner/services/OnlinerTvData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pageobject_model/page/AbstractPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pageobject_model/page/Browser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/onliner/browser/Browser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pageobject_model/page/CatalogPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/onliner/page/CatalogPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pageobject_model/page/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/onliner/page/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pageobject_model/page/PropertyReader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pageobject_model/page/TvPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pageobject_model/test/WebDriverOnliner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/onliner/test/WebDriverOnliner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/testng.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/tvFilterTestData.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/tvFilterTestData.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/2023-01-26T19-09-44_251.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TestSuite.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TestSuite.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/WebDriverTests/Smoke Test.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/WebDriverTests/Smoke Test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/WebDriverTests/Smoke Test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/WebDriverTests/Smoke Test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/WebDriverTests/testng-failed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/WebDriverTests/testng-failed.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/emailable-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/emailable-report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-pageobject_model.test.HelloWebDriver.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/WebDriverTests/classes.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/old/WebDriverTests/classes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/WebDriverTests/methods-alphabetical.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/old/WebDriverTests/methods-alphabetical.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/WebDriverTests/methods.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/old/WebDriverTests/methods.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/WebDriverTests/testng.xml.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/old/WebDriverTests/testng.xml.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/WebDriverTests/toc.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/old/WebDriverTests/toc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/old/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-failed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/testng-failed.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/testng-results.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Tv.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/pageobject_model/page/AbstractPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/pageobject_model/page/CatalogPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/pageobject_model/page/HomePage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/pageobject_model/page/TvPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/pageobject_model/test/HelloWebDriver.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2KDM1ZnoboCv7wKk7uviZ8krvXh" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="C:/MavenLection/PenTestProject" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2724138" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="pageobject_model.page" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Project\WebDriver\src\test\resources" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="onliner.services" />
+      <recent name="onliner.browser" />
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="pageobject_model.test" />
+    </key>
+  </component>
+  <component name="RunManager" selected="TestNG.WebDriverOnliner">
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WebDriverTask [clean,test]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="test" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="WebDriverOnliner (1)" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="WebDriverTask" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pageobject_model.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pageobject_model.test" />
+      <option name="MAIN_CLASS_NAME" value="pageobject_model.test.WebDriverOnliner" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WebDriverOnliner" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="WebDriverTask" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="onliner.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pageobject_model.test" />
+      <option name="MAIN_CLASS_NAME" value="onliner.test.WebDriverOnliner" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WebDriverOnliner" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="WebDriverTask" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="onliner.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pageobject_model.test" />
+      <option name="MAIN_CLASS_NAME" value="onliner.test.WebDriverOnliner" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WebDriverOnliner" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="WebDriver" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pageobject_model.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pageobject_model.test" />
+      <option name="MAIN_CLASS_NAME" value="pageobject_model.test.WebDriverOnliner" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WebDriverOnliner.HomePageTest (1)" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="WebDriverTask" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pageobject_model.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pageobject_model.test" />
+      <option name="MAIN_CLASS_NAME" value="pageobject_model.test.WebDriverOnliner" />
+      <option name="METHOD_NAME" value="HomePageTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WebDriverOnliner.HomePageTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="WebDriver" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="onliner.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pageobject_model.test" />
+      <option name="MAIN_CLASS_NAME" value="onliner.test.WebDriverOnliner" />
+      <option name="METHOD_NAME" value="HomePageTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WebDriverOnliner.HomePageTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="WebDriverTask" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="onliner.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pageobject_model.test" />
+      <option name="MAIN_CLASS_NAME" value="onliner.test.WebDriverOnliner" />
+      <option name="METHOD_NAME" value="HomePageTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.WebDriverOnliner" />
+        <item itemvalue="TestNG.WebDriverOnliner.HomePageTest (1)" />
+        <item itemvalue="TestNG.WebDriverOnliner (1)" />
+        <item itemvalue="TestNG.WebDriverOnliner" />
+        <item itemvalue="TestNG.WebDriverOnliner.HomePageTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bec35021-36be-4166-88fa-48dba9a8a4a1" name="Changes" comment="" />
+      <created>1673504485790</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1673504485790</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

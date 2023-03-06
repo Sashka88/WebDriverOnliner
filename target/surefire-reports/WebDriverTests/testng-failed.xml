@@ -3,12 +3,12 @@
 <suite name="Failed suite [WebDriverTests]" guice-stage="DEVELOPMENT" verbose="0">
   <test thread-count="5" name="Smoke Test(failed)" verbose="0">
     <classes>
-      <class name="pageobject_model.test.HelloWebDriver">
+      <class name="pageobject_model.test.WebDriverOnliner">
         <methods>
-          <include name="HomePageTest"/>
           <include name="browserSetup"/>
+          <include name="HomePageTest"/>
         </methods>
-      </class> <!-- pageobject_model.test.HelloWebDriver -->
+      </class> <!-- pageobject_model.test.WebDriverOnliner -->
     </classes>
   </test> <!-- Smoke Test(failed) -->
 </suite> <!-- Failed suite [WebDriverTests] -->
