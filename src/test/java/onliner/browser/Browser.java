@@ -1,7 +1,5 @@
 package onliner.browser;
 
-import static onliner.test.WebDriverOnliner.url;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -16,7 +14,7 @@ public class Browser {
     driver.manage().window().maximize();
   }
 
-  public void getBasePage() {
+  public void getBasePage(String url) {
     driver.get(url);
   }
 }

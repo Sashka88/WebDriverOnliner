@@ -1,7 +1,6 @@
 package onliner.page;
 
 import static onliner.test.WebDriverOnliner.browser;
-
 import java.time.Duration;
 import org.openqa.selenium.*;
 import org.testng.Assert;
