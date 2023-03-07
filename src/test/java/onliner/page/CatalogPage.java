@@ -1,17 +1,18 @@
 package onliner.page;
 
-import onliner.services.OnlinerTvData;
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import static onliner.test.WebDriverOnliner.onlinerTvData;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CatalogPage extends AbstractPage {
 
-  private static By searchElectroBtn = By.xpath("//span[contains(text(),'Электроника')]");
-  private static By searchTvBtn =
+  private By xpathElectronicMenu = By.xpath("//span[contains(text(),'Электроника')]");
+  private By xpathTv =
       By.xpath(
           "//div[@class='catalog-navigation-list__aside-title'][contains(text(), 'Телевидение')]");
-  private static By searchTvMenuBtn =
+  private By xpathTvMenu =
       By.xpath(
           "//div[@class='catalog-navigation-list__aside-item catalog-navigation-list__aside-item_active']//span[@class='catalog-navigation-list__dropdown-title'][contains(text(),'Телевизоры')]");
   private static By currentTitle = By.xpath("//div[@class = 'catalog-navigation__title']");
@@ -21,23 +22,24 @@ public class CatalogPage extends AbstractPage {
   }
 
   public CatalogPage openElectronicMenu() {
+    WebElement buttonElectronic = driver.findElement(xpathElectronicMenu);
     new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
-        .until(condition -> driver.findElement(searchElectroBtn).isDisplayed());
-    driver.findElement(searchElectroBtn).click();
+        .until(condition -> buttonElectronic.isDisplayed());
+    buttonElectronic.click();
     return this;
   }
 
   public CatalogPage openTvMenu() {
-    new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
-        .until(condition -> driver.findElement(searchTvBtn).isDisplayed());
-    driver.findElement(searchTvBtn).click();
+    WebElement buttonTv = driver.findElement(xpathTv);
+    new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS).until(condition -> buttonTv.isDisplayed());
+    buttonTv.click();
     return this;
   }
 
   public CatalogPage openTvPage() {
-    new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
-        .until(condition -> driver.findElement(searchTvMenuBtn).isDisplayed());
-    driver.findElement(searchTvMenuBtn).click();
+    WebElement buttonTvMenu = driver.findElement(xpathTvMenu);
+    new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS).until(condition -> buttonTvMenu.isDisplayed());
+    buttonTvMenu.click();
     return this;
   }
 }

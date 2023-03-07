@@ -1,17 +1,22 @@
 package onliner.browser;
 
+import static onliner.test.WebDriverOnliner.url;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Browser {
-public WebDriver driver;
-    public Browser() {
-        this.driver = new ChromeDriver();
-    }
+  public WebDriver driver;
 
-    public Browser getBasePage() {
-        driver.manage().window().maximize();
-        driver.get("https://www.onliner.by/");
-        return this;
-    }
+  public Browser() {
+    this.driver = new ChromeDriver();
+  }
+
+  public void maximizeWindow() {
+    driver.manage().window().maximize();
+  }
+
+  public void getBasePage() {
+    driver.get(url);
+  }
 }

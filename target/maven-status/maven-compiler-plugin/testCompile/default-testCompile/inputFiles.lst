@@ -1,5 +1,7 @@
-D:\Project\WebDriver\src\test\java\pageobject_model\page\AbstractPage.java
-D:\Project\WebDriver\src\test\java\pageobject_model\page\TvPage.java
-D:\Project\WebDriver\src\test\java\pageobject_model\page\HomePage.java
-D:\Project\WebDriver\src\test\java\pageobject_model\page\CatalogPage.java
-D:\Project\WebDriver\src\test\java\pageobject_model\test\WebDriverOnliner.java
+D:\Project\WebDriver\src\test\java\onliner\page\CatalogPage.java
+D:\Project\WebDriver\src\test\java\onliner\browser\Browser.java
+D:\Project\WebDriver\src\test\java\onliner\test\WebDriverOnliner.java
+D:\Project\WebDriver\src\test\java\onliner\utils\OnlinerTvData.java
+D:\Project\WebDriver\src\test\java\onliner\page\AbstractPage.java
+D:\Project\WebDriver\src\test\java\onliner\page\TvPage.java
+D:\Project\WebDriver\src\test\java\onliner\page\HomePage.java

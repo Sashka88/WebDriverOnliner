@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 1, Errors: 0, Skipped: 1, Time elapsed: 2.382 s <<< FAILURE! - in TestSuite
-pageobject_model.test.WebDriverOnliner.browserSetup  Time elapsed: 2.262 s  <<< FAILURE!
-java.lang.NullPointerException: inStream parameter is null
-	at pageobject_model.test.WebDriverOnliner.browserSetup(WebDriverOnliner.java:28)
-
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.515 s - in TestSuite

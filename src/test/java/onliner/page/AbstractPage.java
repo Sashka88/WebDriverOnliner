@@ -11,16 +11,17 @@ public abstract class AbstractPage {
   protected WebDriver driver;
   protected JavascriptExecutor js;
 
-  public AbstractPage(String expectedTitle, By xpath) {
+  public AbstractPage(String expectedTitle, By xpathTitle) {
     this.driver = browser.driver;
     this.js = (JavascriptExecutor) driver;
     Assert.assertTrue(
-        driver.findElement(xpath).getText().contains(expectedTitle), "page is incorrect");
+        driver.findElement(xpathTitle).getText().contains(expectedTitle),
+        "Incorrect page is opened, expected page is - " + expectedTitle);
   }
 
-  public AbstractPage(By xpath) {
+  public AbstractPage(By xpathElement) {
     this.driver = browser.driver;
     this.js = (JavascriptExecutor) driver;
-    Assert.assertTrue(driver.findElement(xpath).isDisplayed(), "page is incorrect");
+    Assert.assertTrue(driver.findElement(xpathElement).isDisplayed(), "Incorrect page is opened");
   }
 }

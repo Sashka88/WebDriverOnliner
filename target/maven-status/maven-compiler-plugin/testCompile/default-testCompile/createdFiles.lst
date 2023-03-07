@@ -1,5 +1,7 @@
-pageobject_model\page\CatalogPage.class
-pageobject_model\page\HomePage.class
-pageobject_model\page\TvPage.class
-pageobject_model\test\WebDriverOnliner.class
-pageobject_model\page\AbstractPage.class
+onliner\page\HomePage.class
+onliner\page\AbstractPage.class
+onliner\test\WebDriverOnliner.class
+onliner\browser\Browser.class
+onliner\page\CatalogPage.class
+onliner\page\TvPage.class
+onliner\utils\OnlinerTvData.class
