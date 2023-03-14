@@ -5,66 +5,64 @@ import java.util.Locale;
 import onliner.framework.BaseElement;
 import onliner.framework.BasePage;
 import org.openqa.selenium.*;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import static onliner.framework.BaseTest.softAssert;
 import static onliner.framework.Browser.driver;
 
 public class TvPage extends BasePage {
 
-  private String tvMakerXpath = "//ul//input[@type='checkbox' and @value='%s']";
-  private By priceFieldXpath = By.xpath("//input[@placeholder='до']");
-  private String tvResolutionxpath = "//input[@type='checkbox' and @value='%s']";
-  private By minDiagonalFieldXpath = By.xpath("//select[contains(@data-bind, 'value: facet.value.from')]");
-  private By maxDiagonalFieldXpath = By.xpath("//select[contains(@data-bind, 'value: facet.value.to')]");
+  private String cbxMaker = "//ul//input[@type='checkbox' and @value='%s']";
+  private By fieldPrice = By.xpath("//input[@placeholder='до']");
+  private String cbxResolution = "//input[@type='checkbox' and @value='%s']";
+  private By fieldMinDiagonal = By.xpath("//select[contains(@data-bind, 'value: facet.value.from')]");
+  private By fieldMaxDiagonal = By.xpath("//select[contains(@data-bind, 'value: facet.value.to')]");
   private By searchResults = By.xpath("//span[contains(@data-bind, 'html: product.extended_name || product.full_name')][contains(text(), 'Телевизор')]");
-  private By animationXpath = By.xpath("//div[@class='schema-filter-button__state schema-filter-button__state_initial schema-filter-button__state_disabled schema-filter-button__state_control schema-filter-button__state_animated']");
-  private By tvMakersXpath = By.xpath("//span[contains(@data-bind, 'html: product.extended_name || product.full_name')]");
-  private By tvPriceXpath = By.xpath("//a[contains(@data-bind, 'attr: {href: $data.prices.html_url_with_region}')]/span");
-  private By tvDescriptionXpath = By.xpath("//span[contains(@data-bind, 'html: product.description')]");
-  private static By currentTitleXpath = By.xpath("//h1[@class='schema-header__title js-schema-header_title']");
+  private By animation = By.xpath("//div[@class='schema-filter-button__state schema-filter-button__state_initial schema-filter-button__state_disabled schema-filter-button__state_control schema-filter-button__state_animated']");
+  private By makerResults = By.xpath("//span[contains(@data-bind, 'html: product.extended_name || product.full_name')]");
+  private By priceResults = By.xpath("//a[contains(@data-bind, 'attr: {href: $data.prices.html_url_with_region}')]/span");
+  private By descriptionResults = By.xpath("//span[contains(@data-bind, 'html: product.description')]");
+  private static By currentTitle = By.xpath("//h1[@class='schema-header__title js-schema-header_title']");
 
   public TvPage(String title) {
-    super(title, currentTitleXpath);
+    super(title, currentTitle);
   }
 
-  public TvPage selectTvMaker(String tvMaker) {
-    By tvXpath = By.xpath(String.format(tvMakerXpath, tvMaker.toLowerCase(Locale.ROOT)));
-    WebElement tvMakerCheckbox = driver.findElement(tvXpath);
+  public TvPage selectMaker(String tvMaker) {
+    By checkboxMaker = By.xpath(String.format(cbxMaker, tvMaker.toLowerCase(Locale.ROOT)));
+    WebElement tvMakerCheckbox = driver.findElement(checkboxMaker);
     js.executeScript("arguments[0].click()", tvMakerCheckbox);
-    BaseElement.waitUntilIsInvisibilityOfElement(animationXpath);
+    BaseElement.waitUntilIsInvisibilityOfElement(animation);
     return this;
   }
 
-  public TvPage writeTvPrice(String tvPrice) {
-    driver.findElement(priceFieldXpath).sendKeys(tvPrice);
-    BaseElement.waitUntilIsInvisibilityOfElement(animationXpath);
+  public TvPage writePrice(String tvPrice) {
+    driver.findElement(fieldPrice).sendKeys(tvPrice);
+    BaseElement.waitUntilIsInvisibilityOfElement(animation);
     return this;
   }
 
-  public TvPage selectTvResolution(String resolution) {
-    By tvResolution = By.xpath(String.format(tvResolutionxpath, resolution));
-    WebElement resolutionCheckbox = driver.findElement(tvResolution);
+  public TvPage selectResolution(String resolution) {
+    By checkboxResolution = By.xpath(String.format(cbxResolution, resolution));
+    WebElement resolutionCheckbox = driver.findElement(checkboxResolution);
     js.executeScript("arguments[0].click()", resolutionCheckbox);
-    BaseElement.waitUntilIsInvisibilityOfElement(animationXpath);
+    BaseElement.waitUntilIsInvisibilityOfElement(animation);
     return this;
   }
 
-  public TvPage selectTvDiagonal(String minDiagonal, String maxDiagonal) {
+  public TvPage selectDiagonal(String minDiagonal, String maxDiagonal) {
     driver
-        .findElement(minDiagonalFieldXpath)
+        .findElement(fieldMinDiagonal)
         .sendKeys(minDiagonal);
     driver
-        .findElement(maxDiagonalFieldXpath)
+        .findElement(fieldMaxDiagonal)
         .sendKeys(maxDiagonal);
-    BaseElement.waitUntilIsInvisibilityOfElement(animationXpath);
+    BaseElement.waitUntilIsInvisibilityOfElement(animation);
     return this;
   }
 
-  public TvPage vailidateTvMaker(String tvMaker) {
+  public TvPage vailidateMaker(String tvMaker) {
     BaseElement.waitUntilVisibilityOfAllElementsLocated(searchResults);
-    BaseElement.waitUntilIsInvisibilityOfElement(animationXpath);
-    List<WebElement> currentTvMakers = driver.findElements(tvMakersXpath);
+    BaseElement.waitUntilIsInvisibilityOfElement(animation);
+    List<WebElement> currentTvMakers = driver.findElements(makerResults);
     for (WebElement currentTvMaker : currentTvMakers) {
       softAssert.assertTrue(
           currentTvMaker.getText().contains(tvMaker),
@@ -74,8 +72,8 @@ public class TvPage extends BasePage {
   }
 
   public TvPage vailidatePrice(String price) {
-    BaseElement.waitUntilIsInvisibilityOfElement(animationXpath);
-    List<WebElement> productPrices = driver.findElements(tvPriceXpath);
+    BaseElement.waitUntilIsInvisibilityOfElement(animation);
+    List<WebElement> productPrices = driver.findElements(priceResults);
     for (WebElement productPrice : productPrices) {
       int currentPrice =
           Integer.parseInt(
@@ -87,12 +85,10 @@ public class TvPage extends BasePage {
   }
 
   public TvPage vailidateDiagonal(String minDiagonal, String maxDiagonal) {
-    BaseElement.waitUntilIsInvisibilityOfElement(animationXpath);
-    List<WebElement> productDescriptions = driver.findElements(tvDescriptionXpath);
+    BaseElement.waitUntilIsInvisibilityOfElement(animation);
+    List<WebElement> productDescriptions = driver.findElements(descriptionResults);
     for (WebElement productDescription : productDescriptions) {
-      int diagonal =
-          Integer.parseInt(
-              productDescription.getText().substring(0, productDescription.getText().indexOf('"')));
+      int diagonal = Integer.parseInt(productDescription.getText().substring(0, productDescription.getText().indexOf('"')));
       int minDiagonalInt = Integer.parseInt(minDiagonal);
       int maxDiagonalInt = Integer.parseInt(maxDiagonal);
       softAssert.assertTrue(
@@ -102,8 +98,8 @@ public class TvPage extends BasePage {
   }
 
   public TvPage vailidateResolution(String resolution) {
-    BaseElement.waitUntilIsInvisibilityOfElement(animationXpath);
-    List<WebElement> productDescriptions = driver.findElements(tvDescriptionXpath);
+    BaseElement.waitUntilIsInvisibilityOfElement(animation);
+    List<WebElement> productDescriptions = driver.findElements(descriptionResults);
     for (WebElement productDescription : productDescriptions) {
       softAssert.assertTrue(
           productDescription.getText().contains(resolution),

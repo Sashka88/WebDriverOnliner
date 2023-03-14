@@ -4,7 +4,6 @@ import onliner.framework.BaseElement;
 import onliner.framework.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import static onliner.framework.Browser.driver;
 
 public class MainPage extends BasePage {
@@ -17,8 +16,8 @@ public class MainPage extends BasePage {
   }
 
   public MainPage navigateSection(String sectionName) {
-    By sectionXpath = By.xpath(String.format(btnNavigation, sectionName));
-    WebElement buttonSection = driver.findElement(sectionXpath);
+    By section = By.xpath(String.format(btnNavigation, sectionName));
+    WebElement buttonSection = driver.findElement(section);
     BaseElement.waitUntilIsDisplayed(buttonSection);
     buttonSection.click();
     return this;

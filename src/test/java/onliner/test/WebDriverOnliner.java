@@ -18,11 +18,11 @@ public class WebDriverOnliner extends BaseTest {
         .navigateSubMenu("Телевидение")
         .navigatePage("Телевизоры");
     new TvPage("Телевизоры")
-        .selectTvMaker(tvMaker)
-        .writeTvPrice(price)
-        .selectTvResolution(resolution)
-        .selectTvDiagonal(minDiagonal, maxDiagonal)
-        .vailidateTvMaker(tvMaker)
+        .selectMaker(tvMaker)
+        .writePrice(price)
+        .selectResolution(resolution)
+        .selectDiagonal(minDiagonal, maxDiagonal)
+        .vailidateMaker(tvMaker)
         .vailidatePrice(price)
         .vailidateDiagonal(minDiagonal, maxDiagonal)
         .vailidateResolution(resolution);
