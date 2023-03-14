@@ -1,7 +1,0 @@
-onliner\page\HomePage.class
-onliner\page\AbstractPage.class
-onliner\test\WebDriverOnliner.class
-onliner\browser\Browser.class
-onliner\page\CatalogPage.class
-onliner\page\TvPage.class
-onliner\utils\OnlinerTvData.class

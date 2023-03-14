@@ -2,6 +2,11 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="WebDriverTests">
     <test name="Smoke Test">
+        <parameter name="tvMaker" value="Samsung"/>
+        <parameter name="price" value="1500"/>
+        <parameter name="minDiagonal" value="40"/>
+        <parameter name="maxDiagonal" value="50"/>
+        <parameter name="resolution" value="1920x1080"/>
         <classes>
             <class name="onliner.test.WebDriverOnliner"/>
         </classes>

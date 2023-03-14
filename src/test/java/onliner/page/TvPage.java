@@ -1,20 +1,20 @@
 package onliner.page;
 
-import static onliner.test.WebDriverOnliner.softAssert;
-import static onliner.utils.PropertyReader.getTestData;
 import java.util.List;
 import java.util.Locale;
+import onliner.framework.BaseElement;
+import onliner.framework.BasePage;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import static onliner.framework.BaseTest.softAssert;
+import static onliner.framework.Browser.driver;
 
-public class TvPage extends AbstractPage {
+public class TvPage extends BasePage {
 
-  private By tvMakerXpath = By.xpath("//ul//input[@type='checkbox' and @value='"
-              + getTestData("testdata.tvMaker").toLowerCase(Locale.ROOT) + "']");
+  private String tvMakerXpath = "//ul//input[@type='checkbox' and @value='%s']";
   private By priceFieldXpath = By.xpath("//input[@placeholder='до']");
-  private By tvResolutionxpath = By.xpath("//input[@type='checkbox' and @value='"
-              + getTestData("testdata.resolution") + "']");
+  private String tvResolutionxpath = "//input[@type='checkbox' and @value='%s']";
   private By minDiagonalFieldXpath = By.xpath("//select[contains(@data-bind, 'value: facet.value.from')]");
   private By maxDiagonalFieldXpath = By.xpath("//select[contains(@data-bind, 'value: facet.value.to')]");
   private By searchResults = By.xpath("//span[contains(@data-bind, 'html: product.extended_name || product.full_name')][contains(text(), 'Телевизор')]");
@@ -24,105 +24,89 @@ public class TvPage extends AbstractPage {
   private By tvDescriptionXpath = By.xpath("//span[contains(@data-bind, 'html: product.description')]");
   private static By currentTitleXpath = By.xpath("//h1[@class='schema-header__title js-schema-header_title']");
 
-  public TvPage() {
-    super(getTestData("testdata.tvtitle"), currentTitleXpath);
+  public TvPage(String title) {
+    super(title, currentTitleXpath);
   }
 
-  public TvPage selectTvMaker() {
-    WebElement tvMakerCheckbox = driver.findElement(tvMakerXpath);
+  public TvPage selectTvMaker(String tvMaker) {
+    By tvXpath = By.xpath(String.format(tvMakerXpath, tvMaker.toLowerCase(Locale.ROOT)));
+    WebElement tvMakerCheckbox = driver.findElement(tvXpath);
     js.executeScript("arguments[0].click()", tvMakerCheckbox);
-    new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
-        .ignoring(NoSuchElementException.class)
-        .until(ExpectedConditions.invisibilityOfElementLocated(animationXpath));
+    BaseElement.waitUntilIsInvisibilityOfElement(animationXpath);
     return this;
   }
 
-  public TvPage writeTvPrice() {
-    driver.findElement(priceFieldXpath).sendKeys(getTestData("testdata.price"));
-    new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
-        .ignoring(NoSuchElementException.class)
-        .until(ExpectedConditions.invisibilityOfElementLocated(animationXpath));
+  public TvPage writeTvPrice(String tvPrice) {
+    driver.findElement(priceFieldXpath).sendKeys(tvPrice);
+    BaseElement.waitUntilIsInvisibilityOfElement(animationXpath);
     return this;
   }
 
-  public TvPage selectTvResolution() {
-    WebElement resolutionCheckbox = driver.findElement(tvResolutionxpath);
+  public TvPage selectTvResolution(String resolution) {
+    By tvResolution = By.xpath(String.format(tvResolutionxpath, resolution));
+    WebElement resolutionCheckbox = driver.findElement(tvResolution);
     js.executeScript("arguments[0].click()", resolutionCheckbox);
-    new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
-        .ignoring(NoSuchElementException.class)
-        .until(ExpectedConditions.invisibilityOfElementLocated(animationXpath));
+    BaseElement.waitUntilIsInvisibilityOfElement(animationXpath);
     return this;
   }
 
-  public TvPage selectTvDiagonal() {
+  public TvPage selectTvDiagonal(String minDiagonal, String maxDiagonal) {
     driver
         .findElement(minDiagonalFieldXpath)
-        .sendKeys(getTestData("testdata.mindiagonal"));
+        .sendKeys(minDiagonal);
     driver
         .findElement(maxDiagonalFieldXpath)
-        .sendKeys(getTestData("testdata.maxdiagonal"));
-    new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
-        .ignoring(NoSuchElementException.class)
-        .until(ExpectedConditions.invisibilityOfElementLocated(animationXpath));
+        .sendKeys(maxDiagonal);
+    BaseElement.waitUntilIsInvisibilityOfElement(animationXpath);
     return this;
   }
 
-  public TvPage vailidateTvMaker() {
-    new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
-        .ignoring(StaleElementReferenceException.class)
-        .until(ExpectedConditions.visibilityOfAllElementsLocatedBy(searchResults));
-    new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
-        .ignoring(NoSuchElementException.class)
-        .until(ExpectedConditions.invisibilityOfElementLocated(animationXpath));
+  public TvPage vailidateTvMaker(String tvMaker) {
+    BaseElement.waitUntilVisibilityOfAllElementsLocated(searchResults);
+    BaseElement.waitUntilIsInvisibilityOfElement(animationXpath);
     List<WebElement> currentTvMakers = driver.findElements(tvMakersXpath);
     for (WebElement currentTvMaker : currentTvMakers) {
       softAssert.assertTrue(
-          currentTvMaker.getText().contains(getTestData("testdata.tvMaker")),
+          currentTvMaker.getText().contains(tvMaker),
           "TvMaker is incorrect in case " + currentTvMakers.indexOf(currentTvMaker) + 1);
     }
     return this;
   }
 
-  public TvPage vailidatePrice() {
-    new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
-        .ignoring(NoSuchElementException.class)
-        .until(ExpectedConditions.invisibilityOfElementLocated(animationXpath));
+  public TvPage vailidatePrice(String price) {
+    BaseElement.waitUntilIsInvisibilityOfElement(animationXpath);
     List<WebElement> productPrices = driver.findElements(tvPriceXpath);
     for (WebElement productPrice : productPrices) {
       int currentPrice =
           Integer.parseInt(
               productPrice.getText().substring(0, productPrice.getText().indexOf(',')));
-      int maxPrice = Integer.parseInt(getTestData("testdata.price"));
+      int maxPrice = Integer.parseInt(price);
       softAssert.assertTrue(maxPrice >= currentPrice, "price is more than " + maxPrice);
     }
     return this;
   }
 
-  public TvPage vailidateDiagonal() {
-    new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
-        .ignoring(NoSuchElementException.class)
-        .until(ExpectedConditions.invisibilityOfElementLocated(animationXpath));
+  public TvPage vailidateDiagonal(String minDiagonal, String maxDiagonal) {
+    BaseElement.waitUntilIsInvisibilityOfElement(animationXpath);
     List<WebElement> productDescriptions = driver.findElements(tvDescriptionXpath);
     for (WebElement productDescription : productDescriptions) {
       int diagonal =
           Integer.parseInt(
               productDescription.getText().substring(0, productDescription.getText().indexOf('"')));
-      int minDiagonal = Integer.parseInt(getTestData("testdata.mindiagonal"));
-      int maxDiagonal = Integer.parseInt(getTestData("testdata.maxdiagonal"));
+      int minDiagonalInt = Integer.parseInt(minDiagonal);
+      int maxDiagonalInt = Integer.parseInt(maxDiagonal);
       softAssert.assertTrue(
-          diagonal >= minDiagonal || diagonal <= maxDiagonal, "tv diagonal is incorrect");
+          diagonal >= minDiagonalInt || diagonal <= maxDiagonalInt, "tv diagonal is incorrect");
     }
     return this;
   }
 
-  public TvPage vailidateResolution() {
-    new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
-        .ignoring(NoSuchElementException.class)
-        .until(ExpectedConditions.invisibilityOfElementLocated(animationXpath));
+  public TvPage vailidateResolution(String resolution) {
+    BaseElement.waitUntilIsInvisibilityOfElement(animationXpath);
     List<WebElement> productDescriptions = driver.findElements(tvDescriptionXpath);
     for (WebElement productDescription : productDescriptions) {
       softAssert.assertTrue(
-          productDescription.getText().contains(getTestData("testdata.resolution")),
+          productDescription.getText().contains(resolution),
           "tv resolution is incorrect");
     }
     return this;

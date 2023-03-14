@@ -1,44 +1,31 @@
 package onliner.test;
 
-import onliner.browser.Browser;
+import onliner.framework.BaseTest;
 import onliner.page.CatalogPage;
-import onliner.page.HomePage;
+import onliner.page.MainPage;
 import onliner.page.TvPage;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 
-public class WebDriverOnliner {
-  public static Browser browser;
-  public static SoftAssert softAssert;
+public class WebDriverOnliner extends BaseTest {
 
-  @BeforeMethod(alwaysRun = true)
-  public void setup() {
-    browser = new Browser();
-    softAssert = new SoftAssert();
-    browser.maximizeWindow();
-    browser.getBasePage("https://www.onliner.by/");
-  }
-
+  @Parameters({"tvMaker", "price", "minDiagonal", "maxDiagonal", "resolution"})
   @Test
-  public void onlinerTvTest() {
-    new HomePage().openCatalogPage();
-    new CatalogPage().openElectronicMenu().openTvMenu().openTvPage();
-    new TvPage()
-        .selectTvMaker()
-        .writeTvPrice()
-        .selectTvResolution()
-        .selectTvDiagonal()
-        .vailidateTvMaker()
-        .vailidatePrice()
-        .vailidateDiagonal()
-        .vailidateResolution();
+  public void onlinerTvTest(String tvMaker, String price, String minDiagonal, String maxDiagonal, String resolution) {
+    new MainPage().navigateSection("Каталог");
+    new CatalogPage("Каталог")
+        .navigateMenu("Электроника")
+        .navigateSubMenu("Телевидение")
+        .navigatePage("Телевизоры");
+    new TvPage("Телевизоры")
+        .selectTvMaker(tvMaker)
+        .writeTvPrice(price)
+        .selectTvResolution(resolution)
+        .selectTvDiagonal(minDiagonal, maxDiagonal)
+        .vailidateTvMaker(tvMaker)
+        .vailidatePrice(price)
+        .vailidateDiagonal(minDiagonal, maxDiagonal)
+        .vailidateResolution(resolution);
     softAssert.assertAll();
-  }
-
-  @AfterMethod(alwaysRun = true)
-  public void stopBrowser() {
-    browser.driver.quit();
   }
 }

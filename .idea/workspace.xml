@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bec35021-36be-4166-88fa-48dba9a8a4a1" name="Changes" comment="" />
+    <list default="true" id="bec35021-36be-4166-88fa-48dba9a8a4a1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/test/java/onliner/browser/Browser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/onliner/browser/Browser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/onliner/page/AbstractPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/onliner/page/AbstractPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/onliner/page/CatalogPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/onliner/page/CatalogPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/onliner/page/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/onliner/page/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/onliner/page/TvPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/onliner/page/TvPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/onliner/test/WebDriverOnliner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/onliner/test/WebDriverOnliner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/onliner/utils/OnlinerTvData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/onliner/utils/PropertyReader.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
