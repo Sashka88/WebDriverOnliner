@@ -11,6 +11,4 @@
             <class name="onliner.test.WebDriverOnliner"/>
         </classes>
     </test>
-    <!--  Test  -->
 </suite>
-        <!--  Suite  -->

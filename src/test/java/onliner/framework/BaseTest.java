@@ -1,7 +1,7 @@
 package onliner.framework;
 
-import static onliner.framework.Browser.getWebDriver;
-import static onliner.framework.PropertyReader.getTestData;
+import static onliner.framework.DriverFactory.getWebDriver;
+import static onliner.framework.PropertyReader.getProperty;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.asserts.SoftAssert;
@@ -12,14 +12,14 @@ public class BaseTest {
 
   @BeforeMethod(alwaysRun = true)
   public void setup() {
-    browser = new Browser(getWebDriver(getTestData("tvFilterTestData", "testdata.browserName")));
+    browser = new Browser(getProperty("config", "testdata.browserName"));
     softAssert = new SoftAssert();
     browser.maximizeWindow();
-    browser.navigatePage(getTestData("tvFilterTestData", "testdata.url"));
+    browser.navigatePage(getProperty("config", "testdata.url"));
   }
 
   @AfterMethod(alwaysRun = true)
-  public void stopBrowser() {
+  public void teardown() {
     browser.quitBrowser();
   }
 }

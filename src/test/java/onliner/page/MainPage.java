@@ -9,15 +9,14 @@ import static onliner.framework.Browser.driver;
 public class MainPage extends BasePage {
 
   private String btnNavigation = "//span[@class='b-main-navigation__text'][contains(text(), '%s')]";
-  private static By validationLabelXpath = By.xpath("//nav[@class='b-top-navigation']");
+  private static By pageLocator = By.xpath("//nav[@class='b-top-navigation']");
 
   public MainPage() {
-    super(validationLabelXpath);
+    super(pageLocator);
   }
 
   public MainPage navigateSection(String sectionName) {
-    By section = By.xpath(String.format(btnNavigation, sectionName));
-    WebElement buttonSection = driver.findElement(section);
+    WebElement buttonSection = driver.findElement(By.xpath(String.format(btnNavigation, sectionName)));
     BaseElement.waitUntilIsDisplayed(buttonSection);
     buttonSection.click();
     return this;

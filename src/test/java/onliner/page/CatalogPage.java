@@ -11,31 +11,28 @@ public class CatalogPage extends BasePage {
   private String btnMenu = "//span[contains(text(), '%s')]";
   private String btnSubMenu = "//div[@class='catalog-navigation-list__aside-title'][contains(text(), '%s')]";
   private String btnPage = "//div[@class='catalog-navigation-list__aside-item catalog-navigation-list__aside-item_active']//span[contains(text(),'%s')]";
-  private static By currentTitle = By.xpath("//div[@class = 'catalog-navigation__title']");
+  private static By pageLocator = By.xpath("//div[@class = 'catalog-navigation__title']");
 
   public CatalogPage(String title) {
-    super(title, currentTitle);
+    super(title, pageLocator);
   }
 
   public CatalogPage navigateMenu(String menuName) {
-    By buttonNavMenu = By.xpath(String.format(btnMenu, menuName));
-    WebElement buttonMenu = driver.findElement(buttonNavMenu);
+    WebElement buttonMenu = driver.findElement(By.xpath(String.format(btnMenu, menuName)));
     waitUntilIsDisplayed(buttonMenu);
     buttonMenu.click();
     return this;
   }
 
   public CatalogPage navigateSubMenu(String subMenuName) {
-    By buttonNavSubMenu = By.xpath(String.format(btnSubMenu, subMenuName));
-    WebElement buttonSubMenu = driver.findElement(buttonNavSubMenu);
+    WebElement buttonSubMenu = driver.findElement(By.xpath(String.format(btnSubMenu, subMenuName)));
     waitUntilIsDisplayed(buttonSubMenu);
     buttonSubMenu.click();
     return this;
   }
 
   public CatalogPage navigatePage(String pageName) {
-    By btnNavPage = By.xpath(String.format(btnPage, pageName));
-    WebElement buttonPage = driver.findElement(btnNavPage);
+    WebElement buttonPage = driver.findElement(By.xpath(String.format(btnPage, pageName)));
     waitUntilIsDisplayed(buttonPage);
     buttonPage.click();
     return this;

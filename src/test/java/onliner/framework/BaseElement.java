@@ -6,10 +6,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import static onliner.framework.BaseTest.browser;
-import static onliner.framework.PropertyReader.getTestData;
+import static onliner.framework.PropertyReader.getProperty;
 
 public class BaseElement {
-    protected static long WAIT_TIMEOUT_SECONDS = Long.parseLong(getTestData("tvFilterTestData", "testdata.duration"));
+    protected static long WAIT_TIMEOUT_SECONDS = Long.parseLong(getProperty("config", "testdata.duration"));
 
     public static void waitUntilIsDisplayed(WebElement button) {
     new WebDriverWait(browser.driver, WAIT_TIMEOUT_SECONDS).until(condition -> button.isDisplayed());
@@ -24,8 +24,5 @@ public class BaseElement {
         new WebDriverWait(browser.driver, WAIT_TIMEOUT_SECONDS)
                 .ignoring(StaleElementReferenceException.class)
                 .until(ExpectedConditions.visibilityOfAllElementsLocatedBy(xpath));
-        }
-        }
-
-
-
+    }
+}
