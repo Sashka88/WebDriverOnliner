@@ -12,10 +12,10 @@ public class BaseTest {
 
   @BeforeMethod(alwaysRun = true)
   public void setup() {
-    browser = new Browser(getProperty("config", "testdata.browserName"));
+    browser = new Browser(getProperty("config", "browserName"));
     softAssert = new SoftAssert();
     browser.maximizeWindow();
-    browser.navigatePage(getProperty("config", "testdata.url"));
+    browser.navigatePage(getProperty("config", "baseUrl"));
   }
 
   @AfterMethod(alwaysRun = true)

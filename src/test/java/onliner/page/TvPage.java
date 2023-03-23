@@ -16,7 +16,8 @@ public class TvPage extends BasePage {
   private By fieldMinDiagonal = By.xpath("//select[contains(@data-bind, 'value: facet.value.from')]");
   private By fieldMaxDiagonal = By.xpath("//select[contains(@data-bind, 'value: facet.value.to')]");
   private By searchResults = By.xpath("//span[contains(@data-bind, 'html: product.extended_name || product.full_name')]");
-  private By animation = By.xpath("//div[contains(@class, 'schema-filter-button__state_control']");
+  private By animation = By.xpath("//div[contains(@class, 'schema-filter-button__state_control schema-filter-button__state_animated']");
+//  private By animation = By.xpath("//div[@class='schema-filter-button__state schema-filter-button__state_initial schema-filter-button__state_disabled schema-filter-button__state_control schema-filter-button__state_animated']");
   private By makerResults = By.xpath("//span[contains(@data-bind, 'html: product.extended_name || product.full_name')]");
   private By priceResults = By.xpath("//a[contains(@data-bind, 'attr: {href: $data.prices.html_url_with_region}')]/span");
   private By descriptionResults = By.xpath("//span[contains(@data-bind, 'html: product.description')]");
@@ -76,8 +77,8 @@ public class TvPage extends BasePage {
   public TvPage vailidateDiagonal(String minDiagonal, String maxDiagonal) {
     BaseElement.waitUntilIsInvisibilityOfElement(animation);
     List<WebElement> productDescriptions = driver.findElements(descriptionResults);
-    softAssert.assertTrue(productDescriptions.stream().allMatch(productDescription -> Integer.parseInt(productDescription.getText().substring(0, 2)) <= Integer.parseInt(maxDiagonal)
-            || Integer.parseInt(productDescription.getText().substring(0, 2))>= Integer.parseInt(minDiagonal)) , "Tv diagonal is incorrect");
+    softAssert.assertTrue(productDescriptions.stream().allMatch(productDescription -> Integer.parseInt(productDescription.getText().substring(0, 2)) <= Integer.parseInt(maxDiagonal)), "Max diagonal is incorrect");
+    softAssert.assertTrue(productDescriptions.stream().allMatch(productDescription -> Integer.parseInt(productDescription.getText().substring(0, 2)) >= Integer.parseInt(minDiagonal)), "Min diagonal is incorrect");
     return this;
   }
 

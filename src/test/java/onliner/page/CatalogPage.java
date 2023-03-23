@@ -10,7 +10,7 @@ public class CatalogPage extends BasePage {
 
   private String btnMenu = "//span[contains(text(), '%s')]";
   private String btnSubMenu = "//div[@class='catalog-navigation-list__aside-title'][contains(text(), '%s')]";
-  private String btnPage = "//div[@class='catalog-navigation-list__aside-item catalog-navigation-list__aside-item_active']//span[contains(text(),'%s')]";
+  private String btnPage = "//div[contains(@class, 'catalog-navigation-list__aside-item_active')]//span[contains(text(),'%s')]";
   private static By pageLocator = By.xpath("//div[@class = 'catalog-navigation__title']");
 
   public CatalogPage(String title) {

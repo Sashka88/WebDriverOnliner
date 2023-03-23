@@ -12,7 +12,8 @@ public class WebDriverOnliner extends BaseTest {
   @Parameters({"tvMaker", "price", "minDiagonal", "maxDiagonal", "resolution"})
   @Test
   public void onlinerTvTest(String tvMaker, String price, String minDiagonal, String maxDiagonal, String resolution) {
-    new MainPage().navigateSection("Каталог");
+    new MainPage()
+            .navigateSection("Каталог");
     new CatalogPage("Каталог")
         .navigateMenu("Электроника")
         .navigateSubMenu("Телевидение")
