@@ -17,7 +17,6 @@ public class TvPage extends BasePage {
   private By fieldMaxDiagonal = By.xpath("//select[contains(@data-bind, 'value: facet.value.to')]");
   private By searchResults = By.xpath("//span[contains(@data-bind, 'html: product.extended_name || product.full_name')]");
   private By animation = By.xpath("//div[contains(@class, 'schema-filter-button__state_control schema-filter-button__state_animated']");
-//  private By animation = By.xpath("//div[@class='schema-filter-button__state schema-filter-button__state_initial schema-filter-button__state_disabled schema-filter-button__state_control schema-filter-button__state_animated']");
   private By makerResults = By.xpath("//span[contains(@data-bind, 'html: product.extended_name || product.full_name')]");
   private By priceResults = By.xpath("//a[contains(@data-bind, 'attr: {href: $data.prices.html_url_with_region}')]/span");
   private By descriptionResults = By.xpath("//span[contains(@data-bind, 'html: product.description')]");
